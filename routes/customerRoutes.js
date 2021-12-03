@@ -26,14 +26,17 @@ router.get('/:id', (req,res) => {
   res.status(404).send('id not found')
 })
 
-router.post('/', (req,res) => {
-
+router.post('/',  (req,res) => {
+  console.log(req.body)
    const customer = new Customer({
     name: req.body.name,
     id: req.body.id,
     email: req.body.email, 
     itemsBought: req.body.itemsBought
    })
+  
+    // await customer.save()
+    // res.json(customer)
 
    customer.save((err, Customer) => {
      res.send(Customer);
