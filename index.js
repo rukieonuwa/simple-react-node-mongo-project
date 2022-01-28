@@ -7,7 +7,7 @@ const customerRouter = require('./routes/customerRoutes');
 
 
 const app = express();
-
+const PORT = process.env.PORT || 5000;
 
 
 (async () => {
@@ -24,7 +24,7 @@ app.use(express.urlencoded({extended:true}));
 app.use('/ruks/customers/',customerRouter );
 
 
-app.listen(process.env.PORT || 3009, () =>{
-  console.log('app is running on port ' + port);
+app.listen(PORT, () =>{
+  console.log('app is running on port ' + PORT);
 });
 
